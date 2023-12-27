@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    #movieInput {
+      font-family: "Nunito";
+      font-size: 16px;
+      padding: 10px;
+      margin-top: 10px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  </style>
+  <script>
+    function showFinalMessage() {
+      var selectedDate = document.getElementById("dateInput").value;
+      var selectedMovie = document.getElementById("movieInput").value;
+      var selectedDateContainer = document.getElementById("selectedDateContainer");
+
+      if (selectedDate && selectedMovie) {
+        selectedDateContainer.innerHTML = `Yayy! You have chosen the date: ${selectedDate}<br>Movie Choice: ${selectedMovie}`;
+      } else {
+        selectedDateContainer.textContent = "Please choose a date and enter a movie choice.";
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div>
+      <h1 class="header_text">Yeeyy! Finally</h1>
+    </div>
+    <div class="gif_container">
+      <img
+        src="https://i.postimg.cc/wTDG30TB/yes.gif"
+        alt="Cute animated illustration"
+      />
+    </div>
+    <label for="dateInput" class="text">Choose a Date:</label>
+    <input type="date" id="dateInput" name="dateInput">
+    
+    <label for="movieInput" class="text">Choose a Movie:</label>
+    <input type="text" id="movieInput" name="movieInput" placeholder="Enter your movie choice">
+
+    <button class="btn" onclick="showFinalMessage()">Let's Fix a Date</button>
+    <div id="selectedDateContainer"></div>
+    <!-- Removed the monkey image -->
+    <!-- <div>
+      <img
+        id="monkeyImage"
+        src="https://i.postimg.cc/VL0Bk2Kj/monkey.png"
+        alt="Monkey picking a date"
+      />
+    </div> -->
+  </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    #poem {
+      font-family: "Nunito";
+      font-size: 18px;
+      font-style: italic;
+      color: white;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div>
+      <h1 class="header_text">Do you wanna go out with me?</h1>
+    </div>
+    <!-- Added poem section -->
+    <div id="poem">
+      "Tere sath koi kahani nhi puri zindagi chahiye, tujh sa koi nahi bas tu hi chahiye
+      <br>
+      Iss zindagi me khushi aur gham baht h, khushio ko jeene ke lie aur ghamo ko jhelne ke lie bas tera sath hi chahiye"
+    </div>
+    <div class="gif_container">
+      <img
+        src="https://i.postimg.cc/pdNqPxx1/milk-and-mocha-cute.gif"
+        alt="Cute animated illustration"
+      />
+    </div>
+    <div class="buttons">
+      <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+      <button
+        class="btn"
+        id="noButton"
+        onmouseover="moveButton()"
+        onclick="moveButton()"
+      >
+        No
+      </button>
+
+      <script>
+        function nextPage() {
+          window.location.href = "yes.html";
+        }
+
+        function moveButton() {
+          var x =
+            Math.random() *
+            (window.innerWidth -
+              document.getElementById("noButton").offsetWidth);
+          var y =
+            Math.random() *
+            (window.innerHeight -
+              document.getElementById("noButton").offsetHeight);
+          document.getElementById("noButton").style.left = `${x}px`;
+          document.getElementById("noButton").style.top = `${y}px`;
+        }
+      </script>
+    </div>
+  </div>
+</body>
+</html>
